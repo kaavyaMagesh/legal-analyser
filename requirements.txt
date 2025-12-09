@@ -1,0 +1,21 @@
+fastapi
+uvicorn
+python-multipart
+
+pytesseract
+pillow
+PyMuPDF
+
+python-dotenv
+
+google-genai
+google-auth
+google-auth-oauthlib
+
+pinecone-client>=4.0.0
+
+uuid
+requests
+
+# Optional but recommended for stability
+typing-extensions
