@@ -1,58 +1,92 @@
-Legal Analyser 
-Deciphering the Law with Intelligence.
+# Legal Analyser  
+### *Deciphering the Law with Intelligence*
 
-An advanced NLP platform that automatically summarizes legal documents, detects high-risk clauses, and simplifies complex legalese into plain English.
+**Legal Analyser** is an advanced NLP-powered platform that automatically **summarizes legal documents**, **detects high-risk clauses**, and **translates complex legal language into plain English**—making contracts accessible to non-lawyers.
 
- About The Project
-Legal documents are often dense, verbose, and difficult for non-lawyers to understand. Legal Analyser bridges this gap using State-of-the-art Natural Language Processing (NLP).
+---
 
-By uploading a contract (PDF or DOCX), users receive an instant analysis that breaks down the document's structure, highlights liabilities, and provides abstractive summaries of key sections.
+## About The Project
 
- Key Features
- Intelligent Parsing: OCR-enabled ingestion of scanned PDFs and Word documents.
+Legal documents are often dense, verbose, and difficult for non-legal professionals to interpret. **Legal Analyser** bridges this gap using **state-of-the-art Natural Language Processing (NLP)** techniques.
 
- Abstractive Summarization: Uses fine-tuned Transformer models (e.g., BART-Large-CNN) to generate concise summaries of long clauses.
+By uploading a legal document (PDF or DOCX), users receive an instant, structured analysis that:
+- Breaks down the document into logical sections
+- Highlights risky clauses and liabilities
+- Generates concise, abstractive summaries
+- Simplifies complex legal jargon into understandable language
 
-Risk Detection: automatically flags high-risk clauses such as Indemnity, Termination at Will, and Non-Compete agreements.
+---
 
-Entity Recognition (NER): Extracts and tabulates involved parties, dates, jurisdictions, and monetary amounts.
+## Key Features
 
-Simplification Engine: "Translate to Simple English" feature for complex legal jargon.
+### Intelligent Parsing
+- OCR-enabled ingestion of scanned PDFs and Word documents  
+- Supports both digital and scanned contracts  
 
- System Architecture
-The application follows a decoupled client-server architecture. The heavy ML lifting is done by a Python/Flask backend, while the interactive visualization is handled by a React frontend.
+### Abstractive Summarization
+- Uses fine-tuned Transformer models (e.g., **BART-Large-CNN**)  
+- Generates concise summaries for long clauses and sections  
 
-Ingestion: Document is uploaded and converted to raw text via PyPDF2 or Tesseract.
+### Risk Detection
+- Automatically flags high-risk clauses such as:
+  - Indemnity
+  - Termination at Will
+  - Non-Compete
+  - Liability clauses  
 
-Preprocessing: Text is cleaned, tokenized, and split into clauses.
+### Named Entity Recognition (NER)
+- Extracts and tabulates:
+  - Parties involved
+  - Dates
+  - Jurisdictions
+  - Monetary values  
 
-Inference:
+### Simplification Engine
+- **“Translate to Simple English”** feature  
+- Converts complex legalese into plain, readable language  
 
-NER Model (spaCy): Extracts entities.
+---
 
-Classification Model (BERT): Categorizes clauses (e.g., "Liability").
+## System Architecture
 
-Summarization Model (Hugging Face): Generates summaries.
+The application follows a **decoupled client–server architecture**, separating ML-heavy processing from UI rendering.
 
-Response: JSON data is sent to the React frontend for rendering.
+### Ingestion
+- User uploads a document (PDF/DOCX)
+- Text extraction via **PyPDF2** or **Tesseract OCR**
 
-Tech Stack
-Backend (AI & API)
-Language: Python 3.9
+### Preprocessing
+- Text cleaning and normalization
+- Tokenization and clause segmentation
 
-Framework: Flask (REST API)
+### Inference Pipeline
+- **NER Model (spaCy)** – Entity extraction  
+- **Clause Classification (BERT)** – Clause type detection  
+- **Summarization (Hugging Face Transformers)** – Abstractive summaries  
 
-ML Libraries: PyTorch, Transformers (Hugging Face), spaCy, Scikit-learn
+### Response
+- Structured JSON sent to frontend
+- Interactive rendering and visualization
 
-OCR: Tesseract / pdf2image
+---
 
-Database: MongoDB (for storing document metadata and user logs)
+## Tech Stack
 
-Frontend (UI/UX)
-Framework: React.js (Vite)
+### Backend (AI & API)
+- **Language:** Python 3.9  
+- **Framework:** Flask (REST API)  
+- **ML Libraries:**  
+  - PyTorch  
+  - Hugging Face Transformers  
+  - spaCy  
+  - Scikit-learn  
+- **OCR:** Tesseract, pdf2image  
+- **Database:** MongoDB (document metadata & user logs)
 
-State Management: Redux Toolkit
+---
 
-Styling: Tailwind CSS + Headless UI
-
-Visualization: Chart.js (for risk distribution graphs)
+### Frontend (UI/UX)
+- **Framework:** React.js (Vite)  
+- **State Management:** Redux Toolkit  
+- **Styling:** Tailwind CSS + Headless UI  
+- **Visualization:** Chart.js (risk distribution & analytics)
